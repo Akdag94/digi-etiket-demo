@@ -1,0 +1,103 @@
+/* Tasarım değerleri. Sayfadaki her ölçü ve renk buradan gelir. */
+
+:root {
+  /* Renk: sayfa */
+  --kagit: #efeee9;
+  --kagit-2: #e6e4dc;
+  --yuzey: #f8f7f3;
+  --murekkep: #16171a;
+  --murekkep-2: #44464c;
+  --murekkep-3: #5f6167;
+  --cizgi: rgb(22 23 26 / 0.14);
+  --cizgi-guclu: rgb(22 23 26 / 0.3);
+
+  /* Koyu bölüm (deneme alanı, alt bilgi) */
+  --gece: #16171a;
+  --gece-2: #202227;
+  --gece-yazi: #efeee9;
+  --gece-yazi-2: #b4b5ba;
+  --gece-cizgi: rgb(239 238 233 / 0.16);
+
+  /* Marka ve durum */
+  --marka: #1770ab;
+  --marka-koyu: #125b8b;
+  --marka-acik: #5aaee6;
+  --kirmizi: #b42318;
+  --yesil: #1f7a3d;
+
+  /* E-kâğıt ekran renkleri (yalnız etiket bileşeni) */
+  --ek-zemin: #e9e8e1;
+  --ek-siyah: #1b1b1b;
+  --ek-kirmizi: #c0272d;
+  --ek-sari: #e8b923;
+  --ek-govde: #f6f6f3;
+  --ek-govde-kenar: #d9d8d2;
+
+  /* Boşluk: 4'ün katları */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+
+  /* Yazı */
+  --yazi: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --yazi-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --t-xs: 12px;   --sa-xs: 16px;
+  --t-sm: 14px;   --sa-sm: 20px;
+  --t-base: 16px; --sa-base: 24px;
+  --t-lg: 18px;   --sa-lg: 28px;
+  --t-xl: 22px;   --sa-xl: 30px;
+  --t-h3: 22px;   --sa-h3: 28px;
+  --t-h2: 28px;   --sa-h2: 34px;
+  --t-h1: 36px;   --sa-h1: 40px;
+
+  /* Köşe */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+
+  /* Hareket */
+  --sure-kisa: 120ms;
+  --sure-orta: 180ms;
+  --sure-uzun: 240ms;
+  --egri: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Gölge: yalnız fiziksel nesneler (etiket, açılır pencere) */
+  --golge-nesne: 0 1px 1px rgb(22 23 26 / 0.12), 0 6px 16px -6px rgb(22 23 26 / 0.22);
+  --golge-katman: 0 12px 32px -12px rgb(22 23 26 / 0.35);
+
+  /* Düzen */
+  --kap: 1200px;
+  --kenar: 16px;
+  --ust-yukseklik: 64px;
+  --bolum: var(--s-16);
+  --odak: 0 0 0 2px var(--kagit), 0 0 0 4px var(--marka);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --kenar: 24px;
+    --t-h1: 44px; --sa-h1: 48px;
+    --t-h2: 32px; --sa-h2: 38px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --kenar: 32px;
+    --ust-yukseklik: 72px;
+    --bolum: var(--s-24);
+    --t-h1: 52px; --sa-h1: 56px;
+    --t-h2: 36px; --sa-h2: 42px;
+    --t-h3: 28px; --sa-h3: 34px;
+  }
+}

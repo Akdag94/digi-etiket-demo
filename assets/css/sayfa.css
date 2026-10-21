@@ -29,28 +29,17 @@
   text-decoration: none;
 }
 
-.marka__isaret {
-  position: relative;
-  width: 24px;
-  height: 16px;
-  border: 2px solid var(--murekkep);
-  border-radius: var(--r-sm);
+.marka .logo {
+  width: auto;
+  height: 28px;
+  overflow: visible;
+  color: var(--logo-lacivert);
 }
 
-.marka__isaret::after {
-  content: "";
-  position: absolute;
-  right: 2px;
-  bottom: 2px;
-  width: 8px;
-  height: 4px;
-  background: var(--murekkep);
-}
-
-.marka__ad {
-  font-size: var(--t-lg);
-  font-weight: 800;
-  letter-spacing: -0.01em;
+@media (min-width: 1024px) {
+  .marka .logo {
+    height: 32px;
+  }
 }
 
 .marka__ek {
@@ -971,7 +960,16 @@
 
 .alt__marka img {
   width: auto;
-  height: 28px;
+  height: 36px;
+}
+
+.alt__aykatech {
+  margin-bottom: var(--s-2);
+}
+
+.alt__aykatech img {
+  width: auto;
+  height: 20px;
 }
 
 .alt__marka p {

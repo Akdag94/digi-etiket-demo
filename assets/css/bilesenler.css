@@ -885,3 +885,42 @@ select.girdi {
 .etiket__icerik {
   display: contents;
 }
+
+/* ---------------------------------------------------------------- Logo
+   Sinyal yayları içten dışa yanar, etiket ipinde hafifçe sallanır.
+   Yalnız bir şey gönderildiğinde oynar (sayfa açılışı, fiyat gönderimi,
+   logonun üstüne gelinmesi); sürekli dönmez. */
+
+.logo__etiket {
+  transform-origin: 0 -24px;
+}
+
+.logo[data-sinyal] .logo__etiket {
+  animation: logo-salla 1100ms var(--egri);
+}
+
+.logo[data-sinyal] .logo__yay {
+  animation: logo-yay 900ms var(--egri) both;
+}
+
+.logo[data-sinyal] .logo__yay--2 { animation-delay: 120ms; }
+.logo[data-sinyal] .logo__yay--3 { animation-delay: 240ms; }
+
+@keyframes logo-yay {
+  0% { opacity: 0.15; }
+  35%, 100% { opacity: 1; }
+}
+
+@keyframes logo-salla {
+  0% { transform: rotate(0); }
+  30% { transform: rotate(6deg); }
+  60% { transform: rotate(-3deg); }
+  100% { transform: rotate(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo[data-sinyal] .logo__etiket,
+  .logo[data-sinyal] .logo__yay {
+    animation: none;
+  }
+}

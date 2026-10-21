@@ -18,6 +18,10 @@
   --gece-yazi-2: #b4b5ba;
   --gece-cizgi: rgb(239 238 233 / 0.16);
 
+  /* digietiket logosu */
+  --logo-lacivert: #0b2a5b;
+  --logo-turkuaz: #00b0b8;
+
   /* Marka ve durum */
   --marka: #1770ab;
   --marka-koyu: #125b8b;

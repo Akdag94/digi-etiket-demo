@@ -47,6 +47,23 @@
     };
   })();
 
+  /* ------------------------------------------------------------ Logo sinyali */
+
+  // Bir fiyat etikete gönderildiğinde logodaki sinyal de yanar
+  const logoSinyal = (() => {
+    const logo = $(".ust .logo");
+    let zaman;
+    const oynat = () => {
+      if (!logo || azHareket.matches || logo.hasAttribute("data-sinyal")) return;
+      logo.dataset.sinyal = "";
+      clearTimeout(zaman);
+      zaman = setTimeout(() => logo.removeAttribute("data-sinyal"), 1200);
+    };
+    $(".marka")?.addEventListener("pointerenter", oynat);
+    setTimeout(oynat, 400);
+    return oynat;
+  })();
+
   /* ------------------------------------------------------------ Üst bar */
 
   const ust = $("[data-ust]");
@@ -172,6 +189,7 @@
       const temel = onceki.eski || onceki.fiyat;
       const yeni = { ...onceki, fiyat, eski: indirim ? temel : null };
       const durum = kayitEkle(el, onceki, yeni);
+      logoSinyal();
       await bekle(600);
       await DE.Etiket.guncelle(el, yeni);
       durum.textContent = "rafta";
@@ -312,6 +330,7 @@
 
       const onceki = durumlar[anahtar];
       durumYazi.textContent = "Modeme iletiliyor…";
+      logoSinyal();
       await bekle(500);
       durumYazi.textContent = "Etiket ekranı yenileniyor…";
       durumlar[anahtar] = yeni;
